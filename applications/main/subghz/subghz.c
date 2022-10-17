@@ -196,14 +196,14 @@ SubGhz* subghz_alloc(bool alloc_for_tx_only) {
 #ifdef SUBGHZ_SAVE_DETECT_RAW_SETTING
         FURI_LOG_D(
             TAG,
-            "last frequency: %ld, preset: %ld, detect_raw: %d",
+            "dernière fréquence: %ld, preset: %ld, detect_raw: %d",
             subghz->last_settings->frequency,
             subghz->last_settings->preset,
             subghz->last_settings->detect_raw);
 #else
         FURI_LOG_D(
             TAG,
-            "last frequency: %ld, preset: %ld",
+            "dernière fréquence: %ld, preset: %ld",
             subghz->last_settings->frequency,
             subghz->last_settings->preset);
 #endif
@@ -440,7 +440,7 @@ int32_t subghz_app(void* p) {
                 subghz->scene_manager, SubGhzSceneShowError, SubGhzCustomEventManagerSet);
             furi_string_set(
                 subghz->error_str,
-                "No SD card or\ndatabase found.\nSome app function\nmay be reduced.");
+                "Pas de carte SD ou\nbase de données trouvées.\nCertaines fonctions d'app\nseront réduites.");
             scene_manager_next_scene(subghz->scene_manager, SubGhzSceneShowError);
         }
     }
